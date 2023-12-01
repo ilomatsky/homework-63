@@ -32,11 +32,11 @@ const AddPost = () => {
         </label>
         <br/>
         <label>
-          Content:
+          Description:
           <textarea value={content} onChange={(e) => setContent(e.target.value)}/>
         </label>
         <br/>
-        <button type="submit">Create Post</button>
+        <button type="submit">Save</button>
       </form>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useParams, useNavigate} from 'react-router-dom';
 import axiosAPI from '../../axiosAPI';
+import formatDateTime from '../TimeConverter/TimeConverter';
 
 interface PostDetailProps {
 }
@@ -45,11 +46,11 @@ const PostDetail: React.FC<PostDetailProps> = () => {
 
   return (
     <div>
+      <p>Created on: {formatDateTime(post.createdAt)}</p>
       <h2>{post.title}</h2>
       <p>{post.content}</p>
-      <p>Дата создания: {post.createdAt}</p>
-      <button onClick={handleDelete}>Удалить</button>
-      <button onClick={() => navigate(`/posts/${id}/edit`)}>Редактировать</button>
+      <button onClick={handleDelete}>Delete</button>
+      <button onClick={() => navigate(`/posts/${id}/edit`)}>Edit</button>
     </div>
   );
 };
