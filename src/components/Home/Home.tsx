@@ -36,20 +36,19 @@ const Home: React.FC<HomeProps> = () => {
   }, []);
 
   return (
-    <div>
-      <h2>My blog</h2>
-      <ul>
+    <>
+      <ul className="post-list">
         {posts.map((post) => (
-          <li key={post.id}>
-            <p>{formatDateTime(post.createdAt)}</p>
-            <p>{post.title}</p>
-            <Link to={`/posts/${post.id}`}>
-              <span>Read more{'>>'}</span>
+          <li key={post.id} className="post">
+            <h5>Created on: {formatDateTime(post.createdAt)}</h5>
+            <h4>{post.title}</h4>
+            <Link to={`/posts/${post.id}`} className="read-more">
+              <strong>Read more{'>>'}</strong>
             </Link>
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 
