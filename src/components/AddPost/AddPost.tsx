@@ -53,12 +53,12 @@ const PostForm = () => {
       <form className="add-post-form" onSubmit={handleSubmit}>
         <label className="add-post-label">
           Title:
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="add-post-input"/>
+          <input type="text" required value={title} onChange={(e) => setTitle(e.target.value)} className="add-post-input"/>
         </label>
         <br/>
         <label className="add-post-label">
           Content:
-          <textarea value={content} onChange={(e) => setContent(e.target.value)} className="add-post-textarea"/>
+          <textarea value={content} required onChange={(e) => setContent(e.target.value)} className="add-post-textarea"/>
         </label>
         <br/>
         <button type="submit" className="add-post-button">
